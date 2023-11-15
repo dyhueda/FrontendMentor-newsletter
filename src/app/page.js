@@ -8,12 +8,12 @@ import { useForm } from "react-hook-form";
 
 export default function Home() {
   const [subscribe, setSubscribe] = useState(false);
+  const [email, setEmail] = useState("")
   const products = [
     { id: 1, description: "Product discovery and building what matters" },
     { id: 2, description: "Measuring to ensure updates are a success" },
     { id: 3, description: "And much more!" },
   ];
-  let email = ""
   const {
     register,
     handleSubmit,
@@ -23,7 +23,7 @@ export default function Home() {
 
 
   const onSubmit = (data)=>{
-    email= data.email;
+    setEmail(data.email)
     reset
     setSubscribe(true)
   }
